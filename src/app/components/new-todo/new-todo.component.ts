@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Form } from '@angular/forms';
+import { ITodo } from 'src/app/models/ITodo';
+
 
 @Component({
   selector: 'app-new-todo',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewTodoComponent implements OnInit {
 
+  @ViewChild('f') form:Form
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  public onNewTodoSubmit():void{
+    console.log(this.form)
+    console.log("newSubmit")
+  }
+
 
 }
