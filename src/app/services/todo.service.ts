@@ -11,9 +11,8 @@ export class TodoService {
 
   private _todoSubject:BehaviorSubject<Array<ITodo>>=new BehaviorSubject(this.todos);
 
-
-
   private _singleTodoSubject:BehaviorSubject<ITodo>=new BehaviorSubject(this.todos.length?this.todos[0]:null)
+
 
   constructor() { }
 
@@ -45,5 +44,16 @@ export class TodoService {
     existingTodo.push(newTodo);
     this._todoSubject.next(existingTodo);
     localStorage.setItem("todos",JSON.stringify(existingTodo));
+  }
+
+  public onActionTodo(todoId:string,Action:string):void{
+    const existingTodos :Array<ITodo>=this._todoSubject.value;
+
+    const todoIndex= existingTodos.findIndex(singelTodo=>singelTodo.id===todoId);
+    existingTodos[todoIndex][Action]=true;
+
+    this._todoSubject.next(existingTodos);
+    localStorage.setItem("todos",JSON.stringify(existingTodos)); 
+
   }
 }

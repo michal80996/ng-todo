@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { ITodo } from './models/ITodo';
-import {MatDialog, MatDialogModule} from '@angular/material/dialog';
-import { NewTodoComponent } from './components/new-todo/new-todo.component';
+
 
 
 @Component({

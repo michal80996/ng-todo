@@ -1,7 +1,7 @@
 import { Subscription } from "rxjs";
 
 export interface ITodo{
-    id:number;
+    id:string;
     title:string;
     description:string;
     isCompleted:boolean;
