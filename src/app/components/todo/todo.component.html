@@ -1,5 +1,5 @@
-<div *ngIf="todo && !todo.isArchived">
-<mat-card class="card" *ngIf="todo"
+
+<mat-card class="card" *ngIf="todo && !todo.isArchived"
 >
 
     <mat-card-header>
@@ -12,5 +12,5 @@
       <button mat-raised-button color="warn" (click)="onArchivedTodo()">Archive</button>
     </mat-card-actions>
 
+    <app-count-down [dDate]="todo.endDate"></app-count-down>
   </mat-card>
-</div>

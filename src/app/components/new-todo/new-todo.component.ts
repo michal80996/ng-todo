@@ -16,6 +16,8 @@ export class NewTodoComponent implements OnInit {
 
   @ViewChild('f') form:NgForm;
 
+  public minDate:Date=new Date();
+
   constructor( private todoService:TodoService ,public dialog:MatDialog) { }
 
   ngOnInit(): void {
